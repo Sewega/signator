@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.1",
         "illuminate/support": "^8.0"
     },
     "require-dev": {
@@ -25,7 +25,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Sewega\\Signator\\": "src"
+            "Sewega\\Signator\\": "src",
+            "Sewega\\Signator\\Database\\Factories\\": "database\\factories",
+            "Sewega\\Signator\\Database\\": "database"
         }
     },
     "autoload-dev": {
