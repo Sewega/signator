@@ -120,7 +120,7 @@ class Signator
 
         $signedLink->update(['used' => $signedLink->used + 1]);
 
-        return $route->run();
+        return app()->handle($request);
     }
 
 }

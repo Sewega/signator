@@ -14,23 +14,31 @@ class SignedLinksController extends Controller
 
     public function __construct(private Signator $signator){}
 
-    public function index(Request $request, SignedLink $signedLink): mixed
+    public function index(Request $request, string $signedLink): mixed
     {
+        $signedLink = SignedLink::query()->where('uuid', '=', $signedLink)->firstOrFail();
+
         return $this->signator->handleRequest($signedLink, $request);
     }
 
-    public function store(Request $request, SignedLink $signedLink): mixed
+    public function store(Request $request, string $signedLink): mixed
     {
+        $signedLink = SignedLink::query()->where('uuid', '=', $signedLink)->firstOrFail();
+
         return $this->signator->handleRequest($signedLink, $request);
     }
 
-    public function update(Request $request, SignedLink $signedLink): mixed
+    public function update(Request $request, string $signedLink): mixed
     {
+        $signedLink = SignedLink::query()->where('uuid', '=', $signedLink)->firstOrFail();
+
         return $this->signator->handleRequest($signedLink, $request);
     }
 
-    public function destroy(Request $request, SignedLink $signedLink): mixed
+    public function destroy(Request $request, string $signedLink): mixed
     {
+        $signedLink = SignedLink::query()->where('uuid', '=', $signedLink)->firstOrFail();
+
         return $this->signator->handleRequest($signedLink, $request);
     }
 

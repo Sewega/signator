@@ -89,7 +89,7 @@ class SignedLink extends Model
         return $routeParameters ? json_decode($routeParameters, true) : [];
     }
 
-    public function getMethodAttribute(string $method): SignedLinkMethod
+    public function getMethodAttribute($method): SignedLinkMethod
     {
         return SignedLinkMethod::from($method);
     }
@@ -105,22 +105,22 @@ class SignedLink extends Model
     {
         switch ($this->method) {
             case SignedLinkMethod::GET:
-                return route('signed-links.index', [
+                return route('signator.signed-links.index', [
                     'signedLink' => $this->uuid,
                 ]);
 
             case SignedLinkMethod::POST:
-                return route('signed-links.store', [
+                return route('signator.signed-links.store', [
                     'signedLink' => $this->uuid,
                 ]);
 
             case SignedLinkMethod::PUT:
-                return route('signed-links.update', [
+                return route('signator.signed-links.update', [
                     'signedLink' => $this->uuid,
                 ]);
 
             case SignedLinkMethod::DELETE:
-                return route('signed-links.delete', [
+                return route('signator.signed-links.delete', [
                     'signedLink' => $this->uuid,
                 ]);
 
